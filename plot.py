@@ -2,8 +2,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-filename = sys.argv[1]        # Stores ARG1 in filename, as in: $ python plot.py ARG1 ARG2 
-data = np.loadtxt(filename)   # Attempts to load filename into local variable data.
+try:
+    filename = sys.argv[1]        # Stores ARG1 in filename, as in: $ python plot.py ARG1 ARG2 
+    data = np.loadtxt(filename)   # Attempts to load filename into local variable data.
+    print("Loading data from {}".format(filename))
+except IndexError:
+    print(
+"No filename provided! Please enter a file name, e.g.\n",
+"$ python plot.py FILENAME"
+)
+
 
 ## Part 0
 # Figure out what arguments to add to the loadtxt function call
