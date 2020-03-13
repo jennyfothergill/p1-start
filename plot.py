@@ -15,7 +15,7 @@ def main():
 
     print("Loading data from {}".format(filename))
     try:
-        data = np.loadtxt(filename)   # Attempts to load filename into local variable data.
+        data = np.loadtxt(filename, skiprows=32, delimiter=",")   # Attempts to load filename into local variable data.
     except ValueError as e:
         print("I can't read from this file")
         print(e)
@@ -36,7 +36,8 @@ def main():
     # plot raw-data/Sp15_245L_sect-001_group-1_glass.raw
     # Make sure to include axis labels and units!
     # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
-
+    plt.plot(data[:,4], data[:,8])
+    plt.savefig("fig.png")
 
     ## Part 2
     # Check to see if your code in part 1 will plot all of the files in raw-data/
