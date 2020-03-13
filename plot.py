@@ -37,9 +37,12 @@ def main():
     # Make sure to include axis labels and units!
     # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
     #"Time sec","Extension mm","Load N","Stress MPa","Cycle Count ","Total Cycle Count ","Repetitions Count ","Strain [Exten.] %","Tenacity gf/tex"
-    plt.plot(data[:,7], data[:,3])
+    stress = data[:,3]
+    strain = data[:,7]
+    plt.plot(strain, stress)
     plt.xlabel("Strain [Exten.] %")
     plt.ylabel("Stress MPa")
+    plt.xlim((min(strain), max(strain)))
     plt.savefig("fig.png")
 
     ## Part 2
