@@ -43,7 +43,7 @@ def main():
     plt.xlabel("Strain [Exten.] %")
     plt.ylabel("Stress MPa")
     plt.xlim((min(strain), max(strain)))
-    plt.savefig("fig.png")
+    plt.savefig("fig.png", pad_inches=0.5)
 
     ## Part 2
     # Check to see if your code in part 1 will plot all of the files in raw-data/
