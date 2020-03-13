@@ -36,7 +36,8 @@ def main():
     # plot raw-data/Sp15_245L_sect-001_group-1_glass.raw
     # Make sure to include axis labels and units!
     # plt.plot(xdata,ydata, arguments-to-make-plot-pretty)
-    plt.plot(data[:,4], data[:,8])
+    #"Time sec","Extension mm","Load N","Stress MPa","Cycle Count ","Total Cycle Count ","Repetitions Count ","Strain [Exten.] %","Tenacity gf/tex"
+    plt.plot(data[:,3], data[:,7])
     plt.savefig("fig.png")
 
     ## Part 2
